@@ -30,5 +30,11 @@ jobs:
       - name: Find out where
         if: runner.os == 'Windows'
         run: |
-          $env:Path += ";C:\Program Files\Git\usr\bin;C:\Program Files\Git\bin"
-          where.exe bash && where.exe grep && where.exe sed && where.exe awk && where.exe make && where.exe git
+          $env:Path += ";C:\Program Files\Git\usr\bin;C:\Program Files\Git\bin;C:\ProgramData\Chocolatey\bin"
+          make.exe
+          where.exe bash
+          where.exe grep
+          where.exe sed
+          where.exe awk
+          where.exe make
+          where.exe git
