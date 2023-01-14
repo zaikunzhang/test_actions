@@ -31,10 +31,12 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           $env:Path += ";C:\Program Files\Git\usr\bin;C:\Program Files\Git\bin;C:\ProgramData\Chocolatey\bin"
-          make.exe
           where.exe bash
           where.exe grep
           where.exe sed
           where.exe awk
           where.exe make
           where.exe git
+          dir C:\Program Files\Git\usr\bin
+          dir C:\Program Files\Git\bin
+          dir C:\ProgramData\Chocolatey\bin
