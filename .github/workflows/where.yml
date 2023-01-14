@@ -37,6 +37,6 @@ jobs:
           where.exe awk
           where.exe make
           where.exe git
-          dir C:\Program Files\Git\usr\bin
-          dir C:\Program Files\Git\bin
-          dir C:\ProgramData\Chocolatey\bin
+          dir "C:\Program Files\Git\usr\bin"
+          dir "C:\Program Files\Git\bin"
+          dir "C:\ProgramData\Chocolatey\bin"
