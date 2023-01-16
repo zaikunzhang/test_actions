@@ -29,6 +29,8 @@ jobs:
             userpath
             user_startup = fullfile(userpath, 'startup.m')
             file_id = fopen(user_startup, 'a')
-            rprintf(file_id, 'test')
+            fprintf(file_id, 'test')
             fclose(file_id)
+            startup_text_cells = regexp(fileread(user_startup), '\n', 'split')
+            any(strcmp(startup_text_cells, 'test'))
             system(['cat ', user_startup])
