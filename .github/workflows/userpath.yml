@@ -18,6 +18,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    steps:
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1.2.3
 
@@ -28,6 +29,6 @@ jobs:
             userpath
             user_startup = fullfile(userpath, 'startup.m')
             file_id = fopen(user_startup, 'a')
-            fprintf(file_id, 'test')
+            rprintf(file_id, 'test')
             fclose(file_id)
             system(['cat ', user_startup])
