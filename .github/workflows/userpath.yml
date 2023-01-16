@@ -1,0 +1,32 @@
+name: Use MatCUTEst in GitHub Actions
+
+on:
+  # Trigger the workflow on push or pull request
+  push:
+  #pull_request:  # DANGEROUS! MUST be disabled for self-hosted runners!
+  # Trigger the workflow by cron. The default time zone of GitHub Actions is UTC.
+  schedule:
+    - cron: '0 18 * * *'
+  # Trigger the workflow manually
+  workflow_dispatch:
+
+jobs:
+
+  test:
+
+    name: Demo
+
+    runs-on: ubuntu-latest
+
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v1.2.3
+
+      - name: Run tests
+        uses: matlab-actions/run-command@v1.1.2
+        with:
+          command: |
+            userpath
+            user_startup = fullfile(userpath, 'startup.m')
+            file_id = fopen(user_startup, 'a')
+            fprintf(file_id, 'test')
+            system(['cat ', user_startup])
