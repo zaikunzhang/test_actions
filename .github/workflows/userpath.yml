@@ -29,4 +29,5 @@ jobs:
             user_startup = fullfile(userpath, 'startup.m')
             file_id = fopen(user_startup, 'a')
             fprintf(file_id, 'test')
+            fclose(file_id)
             system(['cat ', user_startup])
