@@ -26,6 +26,7 @@ jobs:
         uses: matlab-actions/run-command@v1.1.2
         with:
           command: |
+            mkdir ~/Documents/MATLAB
             userpath
             user_startup = fullfile(userpath, 'startup.m')
             file_id = fopen(user_startup, 'a')
