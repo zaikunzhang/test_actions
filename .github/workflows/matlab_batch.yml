@@ -23,7 +23,7 @@ jobs:
         uses: matlab-actions/setup-matlab@v1.2.3
 
       - name: Try MATLAB Batch
-        run: matlab -batch "fprintf("Hello!")"
+        run: matlab -batch "A=rand()"
 
       - name: Run tests
         uses: matlab-actions/run-command@v1.1.2
