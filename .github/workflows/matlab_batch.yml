@@ -1,4 +1,4 @@
-name: User Path
+name: Try MATLAB Batch
 
 on:
   # Trigger the workflow on push or pull request
@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1.2.3
+
+      - name: Try MATLAB Batch
+        run: matlab -batch "fprintf("Hello!")"
 
       - name: Run tests
         uses: matlab-actions/run-command@v1.1.2
